@@ -18,7 +18,6 @@ pub struct LaunchState {
     pub sniper_protection_enabled: bool,
     pub min_trading_duration: i64,
     // Enhanced anti-sniper features
-    pub wallet_blacklist_enabled: bool,
     pub progressive_limits_enabled: bool,
     pub initial_max_buy: u64,
     pub initial_max_wallet: u64,
@@ -46,7 +45,6 @@ impl LaunchState {
         8 +  // total_traded
         1 +  // sniper_protection_enabled
         8 +  // min_trading_duration
-        1 +  // wallet_blacklist_enabled
         1 +  // progressive_limits_enabled
         8 +  // initial_max_buy
         8 +  // initial_max_wallet

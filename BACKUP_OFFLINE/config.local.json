@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Exec(cargo build)",
+      "Exec(cargo test)"
+    ]
+  }
+}

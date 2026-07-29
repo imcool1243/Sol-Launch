@@ -50,6 +50,4 @@ pub enum LaunchError {
     NotActive,
     #[msg("Max trades per user exceeded.")]
     MaxTradesExceeded,
-    #[msg("Wallet is blacklisted from trading.")]
-    WalletBlacklisted,
 }

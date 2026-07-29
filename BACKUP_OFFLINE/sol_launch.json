@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "0.1.0",
   "name": "sol_launch",
   "instructions": [
     {
@@ -60,6 +60,10 @@
         {
           "name": "minTradingDuration",
           "type": "i64"
+        },
+        {
+          "name": "walletBlacklistEnabled",
+          "type": "bool"
         },
         {
           "name": "progressiveLimitsEnabled",
@@ -307,6 +311,10 @@
           {
             "name": "minTradingDuration",
             "type": "i64"
+          },
+          {
+            "name": "walletBlacklistEnabled",
+            "type": "bool"
           },
           {
             "name": "progressiveLimitsEnabled",

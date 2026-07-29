@@ -7,7 +7,7 @@ pub mod events;
 pub mod utils;
 pub mod constants;
 
-pub use state::{LaunchState, TradeState, BlacklistState};
+pub use state::{LaunchState, TradeState};
 use error::LaunchError;
 use events::*;
 use utils::*;
@@ -33,7 +33,6 @@ pub mod sol_launch {
         sniper_protection_enabled: bool,
         min_trading_duration: i64,
         // Enhanced anti-sniper parameters
-        wallet_blacklist_enabled: bool,
         progressive_limits_enabled: bool,
         initial_max_buy: u64,
         initial_max_wallet: u64,
@@ -73,7 +72,6 @@ pub mod sol_launch {
         launch.min_trading_duration = min_trading_duration;
         
         // Enhanced anti-sniper features
-        launch.wallet_blacklist_enabled = wallet_blacklist_enabled;
         launch.progressive_limits_enabled = progressive_limits_enabled;
         launch.initial_max_buy = if progressive_limits_enabled { initial_max_buy } else { max_buy };
         launch.initial_max_wallet = if progressive_limits_enabled { initial_max_wallet } else { max_wallet };
@@ -661,7 +659,6 @@ mod tests {
             total_traded: 0,
             sniper_protection_enabled: false,
             min_trading_duration: 0,
-            wallet_blacklist_enabled: false,
             progressive_limits_enabled: false,
             initial_max_buy: 100,
             initial_max_wallet: 500,
@@ -728,7 +725,6 @@ mod tests {
             total_traded: 0,
             sniper_protection_enabled: false,
             min_trading_duration: 0,
-            wallet_blacklist_enabled: false,
             progressive_limits_enabled: false,
             initial_max_buy: 100,
             initial_max_wallet: 500,
@@ -783,7 +779,6 @@ mod tests {
             total_traded: 0,
             sniper_protection_enabled: false,
             min_trading_duration: 0,
-            wallet_blacklist_enabled: false,
             progressive_limits_enabled: false,
             initial_max_buy: 100,
             initial_max_wallet: 500,
@@ -823,7 +818,6 @@ mod tests {
             total_traded: 0,
             sniper_protection_enabled: true,
             min_trading_duration: 300,
-            wallet_blacklist_enabled: false,
             progressive_limits_enabled: false,
             initial_max_buy: 100,
             initial_max_wallet: 500,
@@ -891,7 +885,6 @@ mod tests {
             total_traded: 500_000_000,
             sniper_protection_enabled: true,
             min_trading_duration: 600,
-            wallet_blacklist_enabled: false,
             progressive_limits_enabled: false,
             initial_max_buy: 1000,
             initial_max_wallet: 10000,
@@ -943,7 +936,6 @@ mod tests {
             8 +  // total_traded
             1 +  // sniper_protection_enabled
             8 +  // min_trading_duration
-            1 +  // wallet_blacklist_enabled
             1 +  // progressive_limits_enabled
             8 +  // initial_max_buy
             8 +  // initial_max_wallet

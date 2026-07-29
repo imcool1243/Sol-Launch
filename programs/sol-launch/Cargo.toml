@@ -1,7 +1,7 @@
 [package]
 name = "sol-launch"
-version = "0.1.0"
-description = "Created with Anchor"
+version = "1.0.0"
+description = "Solana Secure Token Launch System with Anti-Sniper Protection"
 edition.workspace = true
 rust-version.workspace = true
 
