@@ -1,0 +1,23 @@
+skip_local_validator = true
+
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+sol_launch = "2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj"
+
+[programs.devnet]
+sol_launch = "2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test"
+deploy = "anchor deploy --provider-cluster devnet"
+
+[hooks]

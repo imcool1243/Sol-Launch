@@ -1,0 +1,70 @@
+╔════════════════════════════════════════════════════════════════╗
+║           SOL-LAUNCH SECURITY SIMULATION REPORT               ║
+╚════════════════════════════════════════════════════════════════╝
+
+📊 SIMULATION SUMMARY
+─────────────────────────────────────────────────────────────
+Total Wallets Simulated:      100
+  - Sniper Wallets:            15
+  - Whale Wallets:             5
+  - Normal User Wallets:       80
+Total Transactions Attempted:  479
+Successful Transactions:       111
+Blocked Transactions:          368
+Success Rate:                  23.2%
+
+🎯 SNIPER ATTACK ANALYSIS
+─────────────────────────────────────────────────────────────
+Sniper Attacks Attempted:      150
+Sniper Attacks Blocked:        150
+Sniper Block Rate:             100.0%
+
+🐋 WHALE ACCUMULATION ANALYSIS
+─────────────────────────────────────────────────────────────
+Whale Accumulation Attempts:  50
+Whale Accumulation Blocked:   50
+Whale Block Rate:             100.0%
+
+⏱️  COOLDOWN VIOLATION ANALYSIS
+─────────────────────────────────────────────────────────────
+Cooldown Violations Attempted: 164
+Cooldown Violations Blocked:   164
+Cooldown Block Rate:          100.0%
+
+🚫 BLACKLIST FUNCTIONALITY
+─────────────────────────────────────────────────────────────
+Blacklist Attempts:            3
+Blacklist Blocks:             3
+Blacklist Effectiveness:       100.0%
+
+👥 LEGITIMATE USER ANALYSIS
+─────────────────────────────────────────────────────────────
+Legitimate Transactions:      86
+Legitimate Transactions Allowed: 86
+Legitimate Success Rate:       100.0%
+
+🔒 SECURITY FEATURE EFFECTIVENESS
+─────────────────────────────────────────────────────────────
+Overall Security Effectiveness: 100.0%
+Legitimate User Success Rate:   100.0%
+
+✅ NO WEAKNESSES DETECTED
+─────────────────────────────────────────────────────────────
+
+📈 PROGRESSIVE LIMITS ANALYSIS
+─────────────────────────────────────────────────────────────
+Initial Max Buy:               500
+Final Max Buy:                 1000
+Limit Increase Interval:       300 seconds
+Limit Increase Multiplier:     1
+Progressive Limits Enabled:    true
+
+🎯 CONCLUSION
+─────────────────────────────────────────────────────────────
+⚠️  SECURITY STATUS: GOOD
+The anti-sniper protection system is effective but has room for
+improvement in some areas.
+
+╔════════════════════════════════════════════════════════════════╗
+║                      END OF REPORT                             ║
+╚════════════════════════════════════════════════════════════════╝

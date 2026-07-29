@@ -1,0 +1,399 @@
+{
+  "version": "0.1.0",
+  "name": "sol_launch",
+  "instructions": [
+    {
+      "name": "initializeLaunch",
+      "accounts": [
+        {
+          "name": "launch",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "maxBuy",
+          "type": "u64"
+        },
+        {
+          "name": "maxWallet",
+          "type": "u64"
+        },
+        {
+          "name": "cooldownSeconds",
+          "type": "i64"
+        },
+        {
+          "name": "totalSupply",
+          "type": "u64"
+        },
+        {
+          "name": "sniperProtectionEnabled",
+          "type": "bool"
+        },
+        {
+          "name": "minTradingDuration",
+          "type": "i64"
+        },
+        {
+          "name": "walletBlacklistEnabled",
+          "type": "bool"
+        },
+        {
+          "name": "progressiveLimitsEnabled",
+          "type": "bool"
+        },
+        {
+          "name": "initialMaxBuy",
+          "type": "u64"
+        },
+        {
+          "name": "initialMaxWallet",
+          "type": "u64"
+        },
+        {
+          "name": "limitIncreaseInterval",
+          "type": "i64"
+        },
+        {
+          "name": "limitIncreaseMultiplier",
+          "type": "u64"
+        },
+        {
+          "name": "antiScamEnabled",
+          "type": "bool"
+        },
+        {
+          "name": "maxTradesPerUser",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "depositTokens",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "launch",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "from",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "withdrawTokens",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "launch",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "to",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "enableTrading",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "launch",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "disableTrading",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "launch",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "executeTrade",
+      "accounts": [
+        {
+          "name": "launch",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tradeState",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "LaunchState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "tradingEnabled",
+            "type": "bool"
+          },
+          {
+            "name": "phase",
+            "type": "u8"
+          },
+          {
+            "name": "maxBuy",
+            "type": "u64"
+          },
+          {
+            "name": "maxWallet",
+            "type": "u64"
+          },
+          {
+            "name": "cooldownSeconds",
+            "type": "i64"
+          },
+          {
+            "name": "tokenMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "vault",
+            "type": "publicKey"
+          },
+          {
+            "name": "vaultBump",
+            "type": "u8"
+          },
+          {
+            "name": "launchBump",
+            "type": "u8"
+          },
+          {
+            "name": "startTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "totalSupply",
+            "type": "u64"
+          },
+          {
+            "name": "totalTraded",
+            "type": "u64"
+          },
+          {
+            "name": "sniperProtectionEnabled",
+            "type": "bool"
+          },
+          {
+            "name": "minTradingDuration",
+            "type": "i64"
+          },
+          {
+            "name": "walletBlacklistEnabled",
+            "type": "bool"
+          },
+          {
+            "name": "progressiveLimitsEnabled",
+            "type": "bool"
+          },
+          {
+            "name": "initialMaxBuy",
+            "type": "u64"
+          },
+          {
+            "name": "initialMaxWallet",
+            "type": "u64"
+          },
+          {
+            "name": "limitIncreaseInterval",
+            "type": "i64"
+          },
+          {
+            "name": "limitIncreaseMultiplier",
+            "type": "u64"
+          },
+          {
+            "name": "antiScamEnabled",
+            "type": "bool"
+          },
+          {
+            "name": "maxTradesPerUser",
+            "type": "u64"
+          },
+          {
+            "name": "totalTraders",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TradeState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lastTradeTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "totalTraded",
+            "type": "u64"
+          },
+          {
+            "name": "tradeCount",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "LaunchInitialized"
+    },
+    {
+      "name": "TokensDeposited"
+    },
+    {
+      "name": "TokensWithdrawn"
+    },
+    {
+      "name": "TradingEnabled"
+    },
+    {
+      "name": "TradingDisabled"
+    },
+    {
+      "name": "TradeExecuted"
+    }
+  ]
+}

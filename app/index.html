@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sol Launch - Meme Coin Launch Page</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Solana launch starter</p>
+        <h1>Launch your meme coin with a safer first impression.</h1>
+        <p class="subtitle">
+          This page gives you a simple launch hub for your project while the Anchor
+          program keeps the opening phase controlled.
+        </p>
+        <div class="hero-actions">
+          <button id="connect-wallet" class="primary-btn">Connect Wallet</button>
+          <a href="#checklist" class="secondary-btn">Open launch checklist</a>
+        </div>
+        <p id="wallet-status" class="status-pill">Wallet not connected yet.</p>
+      </section>
+
+      <section class="info-grid">
+        <article class="panel">
+          <h2>Current launch status</h2>
+          <ul>
+            <li>Program: ready for deployment</li>
+            <li>Launch controls: owner-managed</li>
+            <li>Trading safeguards: enabled</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>Suggested next moves</h2>
+          <ul>
+            <li>Deploy the Anchor program</li>
+            <li>Create the token mint and metadata</li>
+            <li>Seed liquidity and lock it</li>
+            <li>Open the launch from the owner wallet</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="checklist" class="panel checklist">
+        <h2>Launch checklist</h2>
+        <ol>
+          <li>Deploy the program and record the new program ID.</li>
+          <li>Create the SPL token mint and attach metadata.</li>
+          <li>Initialize the launch state with conservative max buy and wallet limits.</li>
+          <li>Start the launch with a short delay window.</li>
+          <li>Open the launch only when liquidity and community are ready.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

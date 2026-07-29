@@ -1,0 +1,61 @@
+.vault-management {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vault-info {
+  margin-bottom: 32px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.vault-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.vault-stats .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vault-stats .stat-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.vault-stats .stat-value {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+.vault-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.action-section {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.action-section h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .vault-actions {
+    grid-template-columns: 1fr;
+  }
+}
