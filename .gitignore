@@ -6,3 +6,14 @@ node_modules
 test-ledger
 .yarn
 .surfpool
+BACKUP_OFFLINE
+config.local.json
+.env
+*.keypair
+wallets/
+deploy/
+*keypair*.json
+*wallet*.json
+!frontend/package.json
+!frontend/src/idl/sol_launch.json
+.sol-launch-v1.0.0.tar.gz
