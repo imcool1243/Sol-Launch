@@ -4,7 +4,7 @@
 
 **Project Name**: Sol-Launch  
 **Version**: 1.0.0  
-**Program ID**: `2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj`  
+**Program ID**: Generated on deployment  
 **Release Date**: 2025-07-29  
 **Status**: Production Ready
 
@@ -283,11 +283,14 @@ solana config set --url mainnet-beta
 # Build the program
 anchor build
 
+# Generate program ID
+solana-keygen new --outfile target/deploy/sol_launch-keypair.json
+
 # Deploy to mainnet
 anchor deploy --provider-cluster mainnet-beta
 
-# Verify deployment
-solana program show 2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj
+# Get your deployed program ID
+solana program show $(solana-keygen pubkey target/deploy/sol_launch-keypair.json)
 ```
 
 ### Token Creation

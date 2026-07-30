@@ -13,6 +13,9 @@ use events::*;
 use utils::*;
 use constants::*;
 
+// Program ID - When deploying your own instance, update this with your deployed program ID
+// To generate a new program ID: solana-keygen new --outfile target/deploy/sol_launch-keypair.json
+// Then update this line with the generated public key
 declare_id!("2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj");
 
 pub const LAUNCH_PHASE_INACTIVE: u8 = 0;

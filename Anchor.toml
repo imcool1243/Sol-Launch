@@ -6,10 +6,16 @@ skip_local_validator = true
 resolution = true
 skip-lint = false
 
+# Program IDs - When deploying your own instance, generate new program IDs
+# To generate: solana-keygen new --outfile target/deploy/sol_launch-keypair.json
+# Then update these IDs with your generated public key
 [programs.localnet]
 sol_launch = "2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj"
 
 [programs.devnet]
+sol_launch = "2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj"
+
+[programs.mainnet]
 sol_launch = "2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj"
 
 [provider]

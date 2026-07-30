@@ -31,10 +31,10 @@ A production-ready Solana smart contract system for fair, secure single token la
 ## 🏗️ Architecture
 
 ### Smart Contract
-- **Program ID**: `2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj`
 - **Framework**: Anchor
 - **Language**: Rust
 - **Network**: Solana Mainnet
+- **Program ID**: Generated on deployment (see deployment guide)
 
 ### Core Instructions
 1. `initialize_launch` - Initialize launch with anti-sniper parameters
@@ -228,4 +228,4 @@ For deployment assistance, refer to the comprehensive documentation in the proje
 **Version**: 1.0.0  
 **Status**: Production Ready  
 **Network**: Solana Mainnet  
-**Program ID**: `2LiNKVCp6wzftaaAmQewMjkNVzF8ztqpdrbPGqUXkhCj`
+**Program ID**: Generated on deployment
